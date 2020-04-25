@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.6.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.fun</groupId>
+    <artifactId>dependencies</artifactId>
+    <version>0.0.1-RELEASE</version>
+    <name>fun dependencies</name>
+    <description>this is base dependencies</description>
+
+    <developers>
+        <developer>
+            <id>whj</id>
+            <name>wuhangjie</name>
+            <email>13819710832@163.com</email>
+            <url/>
+            <roles>
+                <role>Project Manager</role>
+                <role>Architect</role>
+            </roles>
+            <organization>fun</organization>
+            <organizationUrl/>
+            <properties>
+                <dept>fun</dept>
+            </properties>
+            <timezone>8</timezone>
+        </developer>
+    </developers>
+
+    <contributors/>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+
+    <properties>
+        <java.version>11</java.version>
+        <mybatis-spring-boot-starter.version>2.1.2</mybatis-spring-boot-starter.version>
+        <fastjson.version>1.2.68</fastjson.version>
+    </properties>
+
+    <!--依赖版本管理-->
+    <dependencyManagement>
+        <dependencies>
+            <!--简单使用的lombok-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <optional>true</optional>
+            </dependency>
+            <!--mybatis-->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter-test</artifactId>
+                <version>${mybatis-spring-boot-starter.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!--操作json-fastjson-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!--插件仓库-->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>maven-public</id>
+            <url>http://47.112.32.35:20000/repository/maven-public/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+
+    <build>
+        <!--插件版本管理-->
+        <pluginManagement>
+            <plugins>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+        </plugins>
+    </build>
+
+
+    <profiles>
+        <profile>
+            <id>fun-public</id>
+            <distributionManagement>
+                <!--阿里云私服nexus-->
+                <repository>
+                    <id>maven-releases</id>
+                    <url>http://47.112.32.35:20000/repository/maven-releases/</url>
+                </repository>
+                <snapshotRepository>
+                    <id>maven-snapshots</id>
+                    <url>http://47.112.32.35:20000/repository/maven-snapshots/</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+    </profiles>
+
+
+
+
+
+</project>
